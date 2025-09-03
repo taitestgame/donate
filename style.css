@@ -1,0 +1,389 @@
+body {
+    text-align: center;
+    background-color: #CC99CC;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    font-family: "Playfair Display", serif;
+    text-align: center;
+    color: #c30bb4;
+    /* font-size: 900px; */
+    text-transform: capitalize;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 2;
+    margin-top: 5px;
+}
+h1 {
+    font-size: 40px !important;
+}
+h2, h3 {
+    color: #FFFF99;
+    margin-top: 10px;
+    
+    font-size: 40px;
+    font-weight: bold;
+}
+textarea {
+    width: 300px;
+    padding: 12px 18px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    margin: 8px 0;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease-in-out;
+    letter-spacing: 1px;
+    resize: none; /* Ngăn người dùng thay đổi kích thước */
+    overflow: hidden; /* Ẩn thanh cuộn */
+}
+.word-counter {
+    display: block;
+    text-align: right;
+    font-size: 12px;
+    color: #555;
+    margin-top: 5px;
+    margin-right: 5px;
+    letter-spacing: normal;
+}
+
+/* Thay đổi kiểu dáng khi ô được chọn (focus) */
+textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+}
+/* Khung chứa ảnh tròn cố định */
+.logo-container {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: block;
+    margin: 10px auto;
+    border: 3px solid #6a5acd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Ảnh bên trong khung */
+.logo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Default QR Image (qrdonate.jpg) and Generated QR Image (#qrImage) */
+.qr-card img, #qrImage {
+    display: block;
+    margin: 10px auto;
+    border: 3px solid #bd20c9;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Container chung cho ô nhập liệu và chữ VND */
+.input-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+/* Kiểu dáng cho ô nhập liệu số tiền */
+#amount {
+    width: 245px;
+    padding: 16px 8px;
+    font-size: 16px;
+    font-weight: bold;
+    border-right: none;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+    background-color: #f7f7f7;
+    letter-spacing: 1.5px; /* Giãn chữ */
+}
+
+/* Hiệu ứng khi focus */
+#amount:focus {
+    border-color: #3b82f6;
+}
+
+/* Kiểu dáng cho chữ VND */
+.currency {
+    padding: 16px 8px;
+    font-size: 16px;
+    font-weight: bold;
+    border-left: none;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Kiểu dáng chung cho các ô nhập liệu khác */
+input[type="text"] {
+    width: 300px;
+    padding: 16px 14px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    margin: 0px 0;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease-in-out;
+    letter-spacing: 1px; /* Giãn chữ */
+}
+
+/* Thay đổi kiểu dáng khi ô được chọn (focus) */
+input[type="text"]:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+}
+
+/* Hide the generated QR code by default */
+#qrImage {
+    display: none;
+}
+.facebook-button, .tiktok-button {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    padding: 15px;
+    margin: 5px auto;
+    background-color: transparent;
+    border: 2px solid #5d3596; /* Purple border */
+    color: #5d3596; /* Purple text */
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 25px; /* Rounded corners */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.facebook-button:hover, .tiktok-button:hover {
+    background-color: #a90683;
+    color: white;
+}
+
+
+.collapsible-button {
+    width: 100%;
+    max-width: 350px;
+    background-color: #38b191; /* Màu xanh ngọc */
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 5px auto;
+    border-radius: 40px; /* Bo cong các góc 40px */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.collapsible-button:hover {
+    background-color: #2e8b70; /* Màu đậm hơn khi di chuột */
+    transform: translateY(-2px); /* Hiệu ứng nhấc lên nhẹ nhàng */
+}
+
+.slot {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.slot img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Container chung cho các nút */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 0px auto;
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    letter-spacing: 1px; /* Giãn chữ */
+}
+
+/* Create QR Button */
+#myButton {
+    background-color: #b048d0;
+    color: white;
+    width: 250px;
+    margin: 0px auto;
+    display: block;
+}
+
+#myButton:hover {
+    background-color: #01a053;
+    transform: scale(1.06);
+}
+
+/* Delete QR Button */
+#deleteButton {
+    background-color: #ef4444;
+    color: white;
+    display: none;
+    width: 250px;
+    margin: 0px;
+}
+
+#deleteButton:hover {
+    background-color: #dc2626;
+    transform: scale(1.06);
+}
+
+/* Countdown Timer */
+.countdown {
+    display: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0px auto 0;
+    padding: 8px 15px;
+    background-color: #ef4444;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    max-width: 280px;
+    letter-spacing: 1px; /* Giãn chữ */
+}
+
+/* Styles for the collapsible section */
+.collapsible-button {
+    background-color: #17A2B8; /* Màu xanh ngọc */
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    width: 350px;
+    border: none;
+    border-radius: 20px;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    transition: 0.4s;
+    margin: 15px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: 0.5px; /* Giãn chữ */
+}
+
+.collapsible-button:hover {
+    background-color: #980e9d;
+}
+.collapsible-button .icon {
+    width: 40px;  /* Đặt chiều rộng cố định */
+    height: 40px; /* Đặt chiều cao cố định */
+    fill: white;
+    transition: transform 0.4s;
+    margin-left: 2px;
+}
+
+.collapsible-button.active .icon {
+    transform: rotate(180deg);
+}
+
+.collapsible-button.active .icon {
+    /* Xoay ngược icon khi nút được mở */
+    transform: rotate(180deg);
+}
+
+.collapsible-button.active .icon {
+    /* Xoay ngược icon khi nút được mở */
+    transform: rotate(180deg);
+}
+
+.collapsible-button .icon {
+    font-size: 1.2em;
+    transition: transform 0.4s;
+}
+
+.collapsible-button.active .icon {
+    transform: rotate(180deg);
+}
+
+/* Ẩn nội dung mặc định */
+.collapsible-content {
+    display: none;
+}
+/* Hiển thị nội dung khi có class active */
+.collapsible-content.active {
+    display: block;
+    margin-top: 5px;
+}
+
+/* Responsive Styles (Media Queries) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 24px;
+    }
+    h2, h3 {
+        font-size: 20px;
+    }
+
+    .input-group,
+    input[type="text"] {
+        width: 90%;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #amount, .currency {
+        border-radius: 8px;
+    }
+
+    img[alt="Logo"],
+    .qr-card img,
+    #qrImage {
+        width: 90%;
+        max-width: 90%;
+    }
+
+    .button-container {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    button {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 769px) {
+    .qr-card img,
+    #qrImage {
+        width: 600px;
+        max-width: 100%;
+    }
+}
